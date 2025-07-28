@@ -9,7 +9,7 @@ export default function Chat() {
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    fetch("/api/chat", { credentials: "include" })
+    fetch("https://algofast-backend.onrender.com/api/chat", { credentials: "include" })
       .then(res => res.json())
       .then(data => setMessages(data));
   }, []);
@@ -22,7 +22,7 @@ export default function Chat() {
     e.preventDefault();
     if (!text.trim()) return;
     setLoading(true);
-    const res = await fetch("/api/chat", {
+    const res = await fetch("https://algofast-backend.onrender.com/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

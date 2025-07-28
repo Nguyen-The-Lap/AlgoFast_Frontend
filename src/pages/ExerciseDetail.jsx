@@ -57,7 +57,7 @@ const ExerciseDetail = () => {
   }, [id]);
 
   useEffect(() => {
-    fetch(`/api/exercise/${id}/comments`)
+    fetch(`https://algofast-backend.onrender.com/api/exercise/${id}/comments`)
       .then(res => res.json())
       .then(data => setComments(data))
       .catch(() => setComments([]));

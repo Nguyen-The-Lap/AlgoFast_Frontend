@@ -10,7 +10,7 @@ export default function AdminPanel() {
 
   useEffect(() => {
     // Lấy thống kê tổng quan
-    fetch("/api/admin/user-stats", { credentials: "include" })
+    fetch("https://algofast-backend.onrender.com/api/admin/user-stats", { credentials: "include" })
       .then(res => {
         if (res.status === 403) {
           setForbidden(true);
@@ -24,7 +24,7 @@ export default function AdminPanel() {
       .catch(() => setStats({ total: "-", admin: "-", student: "-" }));
 
     // Lấy danh sách user
-    fetch("/api/admin/users", { credentials: "include" })
+    fetch("https://algofast-backend.onrender.com/api/admin/users", { credentials: "include" })
       .then(res => {
         if (res.status === 403) {
           setForbidden(true);

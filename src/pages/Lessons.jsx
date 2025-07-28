@@ -56,7 +56,7 @@ export default function Lessons() {
             className={`relative group p-6 rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:shadow-3xl hover:-translate-y-1 transition-all duration-200
     ${progress.includes(lesson._id) ? "ring-2 ring-blue-400 dark:ring-blue-600" : ""}
   `}
-            onClick={() => navigate(`/lessons/${lesson._id}`)}
+            onClick={() => navigate(`https://algofast-backend.onrender.com/api/lessons/${lesson._id}`)}
           >
             <div className="flex items-center gap-3 mb-2">
               {/* Custom checkbox */}

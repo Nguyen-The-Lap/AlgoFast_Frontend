@@ -16,7 +16,7 @@ export default function Exercises() {
 
   useEffect(() => {
     setLoading(true);
-    axios.get("/api/exercise") // ✅ fixed endpoint
+    axios.get("https://algofast-backend.onrender.com/api/exercise") // ✅ fixed endpoint
       .then((res) => setExercises(res.data))
       .catch((err) => console.error("Fetch error:", err)) // ✅ optional error handling
       .finally(() => setLoading(false));
