@@ -24,7 +24,7 @@ export default function Register() {
     }
     setEmailError("");
     try {
-      await axios.post('/api/auth/register', { username: form.username, email: form.email, password: form.password });
+      await axios.post('https://algofast-backend.onrender.com/api/auth/register', { username: form.username, email: form.email, password: form.password });
       setSuccess('Đăng ký thành công! Hãy đăng nhập.');
     } catch (err) {
       setError(err.response?.data?.message || 'Đăng ký thất bại');
