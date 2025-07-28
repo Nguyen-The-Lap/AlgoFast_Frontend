@@ -10,12 +10,12 @@ export default function Lessons() {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/api/lesson")
+    fetch("https://algofast-backend.onrender.com/api/lesson")
       .then(res => res.json())
       .then(data => setLessons(data))
       .finally(() => setLoading(false));
 
-    fetch("http://localhost:5000/api/user/progress", { credentials: "include" })
+    fetch("https://algofast-backend.onrender.com/api/user/progress", { credentials: "include" })
       .then(res => {
         if (!res.ok) return [];
         return res.json();
@@ -27,7 +27,7 @@ export default function Lessons() {
 
   const handleToggleProgress = async (lessonId, checked) => {
     if (checked) {
-      await fetch("http://localhost:5000/api/user/progress", {
+      await fetch("https://algofast-backend.onrender.com/api/user/progress", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -35,7 +35,7 @@ export default function Lessons() {
       });
       setProgress([...progress, lessonId]);
     } else {
-      await fetch(`http://localhost:5000/api/user/progress/${lessonId}`, {
+      await fetch(`https://algofast-backend.onrender.com/api/user/progress/${lessonId}`, {
         method: "DELETE",
         credentials: "include",
       });

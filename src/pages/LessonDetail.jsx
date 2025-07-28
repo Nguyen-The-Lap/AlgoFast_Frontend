@@ -6,7 +6,7 @@ export default function LessonDetail() {
   const [lesson, setLesson] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/lesson/${id}`)
+    fetch(`https://algofast-backend.onrender.com/api/lesson/${id}`)
       .then(res => res.json())
       .then(data => setLesson(data));
   }, [id]);

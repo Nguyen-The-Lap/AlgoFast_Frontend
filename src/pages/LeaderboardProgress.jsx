@@ -5,7 +5,7 @@ export default function LeaderboardProgress() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/leaderboard/progress")
+    fetch("https://algofast-backend.onrender.com/api/leaderboard/progress")
       .then(res => res.json())
       .then(data => setUsers(data))
       .finally(() => setLoading(false));
