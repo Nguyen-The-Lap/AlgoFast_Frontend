@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Tính tổng hai số",
+    "description": "Viết chương trình tính tổng hai số nguyên a, b.",
+    "difficulty": "easy",
+    "testCases": [
+      { "input": "2 3", "expected_output": "5", "is_sample": true },
+      { "input": "10 20", "expected_output": "30", "is_sample": false }
+    ]
+  },
+  {
+    "title": "Tính giai thừa",
+    "description": "Viết hàm tính giai thừa của một số nguyên dương n.",
+    "difficulty": "easy",
+    "testCases": [
+      { "input": "5", "expected_output": "120", "is_sample": true },
+      { "input": "0", "expected_output": "1", "is_sample": false }
+    ]
+  },
+  {
+    "title": "Kiểm tra số nguyên tố",
+    "description": "Viết chương trình kiểm tra một số nguyên n có phải là số nguyên tố không.",
+    "difficulty": "medium",
+    "testCases": [
+      { "input": "7", "expected_output": "YES", "is_sample": true },
+      { "input": "8", "expected_output": "NO", "is_sample": false }
+    ]
+  }
+]

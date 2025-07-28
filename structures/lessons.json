@@ -1,0 +1,37 @@
+[
+    {
+      "title": "Bài học 2: Đệ quy",
+      "summary": "Giới thiệu về khái niệm đệ quy trong lập trình.",
+      "content": "<h2 class='text-xl font-bold mb-2'>Đệ quy là gì?</h2><p class='mb-4'>Đệ quy là kỹ thuật trong đó một hàm tự gọi lại chính nó để giải quyết một bài toán bằng cách chia nhỏ thành các bài toán con.</p><h3 class='text-lg font-semibold mb-2'>Ví dụ:</h3><pre style='color:#000;background:#f3f4f6'><code style='color:#000'>def factorial(n):\n    if n == 0:\n        return 1\n    return n * factorial(n-1)</code></pre>",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Recursion_tree.png",
+      "video": "https://www.youtube.com/watch?v=KEEKn7Me-ms"
+    },
+    {
+      "title": "Bài học 2: Đệ quy (phần mở rộng)",
+      "summary": "Mở rộng kiến thức về đệ quy, bao gồm các loại đệ quy, ưu nhược điểm và so sánh với vòng lặp.",
+      "content": "<h2 class='text-xl font-bold mb-2'>Các loại đệ quy</h2><ul class='list-disc ml-6 mb-4'><li>Đệ quy tuyến tính: Hàm chỉ gọi lại chính nó một lần.</li><li>Đệ quy nhị phân: Hàm gọi lại chính nó hai lần hoặc nhiều hơn.</li><li>Đệ quy đuôi (tail recursion): Lời gọi đệ quy là thao tác cuối cùng.</li></ul><h2 class='text-xl font-bold mb-2'>Ưu và nhược điểm</h2><h3 class='text-lg font-semibold mb-1'>Ưu điểm:</h3><ul class='list-disc ml-6 mb-4'><li>Giúp mã nguồn ngắn gọn và dễ hiểu với bài toán chia nhỏ.</li><li>Giải quyết tốt các cấu trúc dữ liệu đệ quy như cây, đồ thị.</li></ul><h3 class='text-lg font-semibold mb-1'>Nhược điểm:</h3><ul class='list-disc ml-6 mb-4'><li>Dễ gây tràn ngăn xếp nếu không có điều kiện dừng rõ ràng.</li><li>Hiệu suất chậm hơn so với vòng lặp trong nhiều trường hợp.</li></ul><h2 class='text-xl font-bold mb-2'>So sánh đệ quy và vòng lặp</h2><div class='overflow-x-auto'><table class='table-auto border border-collapse mb-4 w-full text-left bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-white'><thead><tr><th class='border px-4 py-2 bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-white'>Tiêu chí</th><th class='border px-4 py-2 bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-white'>Đệ quy</th><th class='border px-4 py-2 bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-white'>Vòng lặp</th></tr></thead><tbody><tr><td class='border px-4 py-2'>Hiệu suất</td><td class='border px-4 py-2'>Thường chậm hơn</td><td class='border px-4 py-2'>Nhanh hơn</td></tr><tr><td class='border px-4 py-2'>Dễ hiểu</td><td class='border px-4 py-2'>Cho bài toán chia nhỏ</td><td class='border px-4 py-2'>Cho tính toán tuần tự</td></tr></tbody></table></div>",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/TailRecursion.svg/500px-TailRecursion.svg.png",
+      "video": "https://www.youtube.com/watch?v=Mv9NEXX1VHc"
+    },
+    {
+      "title": "Ứng dụng của Đệ quy trong thực tế",
+      "summary": "Khám phá các ứng dụng phổ biến của đệ quy trong thuật toán và lập trình.",
+      "content": "<h2 class='text-xl font-bold mb-2'>Đệ quy được ứng dụng ở đâu?</h2><ul class='list-disc ml-6 mb-4'><li>Xử lý cây (cây thư mục, cây nhị phân).</li><li>Thuật toán tìm kiếm (DFS trong đồ thị).</li><li>Chia để trị (merge sort, quick sort).</li><li>Tính toán tổ hợp (quay lui, nhánh cận).</li></ul>",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Binary_search_tree.svg/500px-Binary_search_tree.svg.png",
+      "video": "https://www.youtube.com/watch?v=uzEZc3g3QmM"
+    },
+    {
+      "title": "Lỗi phổ biến khi dùng đệ quy",
+      "summary": "Nhận diện và tránh những lỗi thường gặp khi sử dụng đệ quy.",
+      "content": "<h2 class='text-xl font-bold mb-2'>Những lỗi thường gặp:</h2><ul class='list-disc ml-6 mb-4'><li>Không có điều kiện dừng rõ ràng.</li><li>Gọi hàm đệ quy quá sâu → gây tràn stack.</li><li>Dùng đệ quy khi không cần thiết → làm chậm chương trình.</li></ul><h3 class='text-lg font-semibold mb-2'>Cách khắc phục:</h3><ul class='list-disc ml-6 mb-4'><li>Luôn kiểm tra điều kiện dừng.</li><li>Dùng đệ quy đuôi hoặc chuyển sang vòng lặp khi phù hợp.</li></ul>",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Call_stack_layout.svg/500px-Call_stack_layout.svg.png",
+      "video": "https://www.youtube.com/watch?v=p7Zg4F_4U9g"
+    },
+    {
+      "title": "Đệ quy có nhớ (Memoization)",
+      "summary": "Kỹ thuật tối ưu hóa đệ quy bằng cách lưu trữ kết quả trung gian.",
+      "content": "<h2 class='text-xl font-bold mb-2'>Đệ quy có nhớ là gì?</h2><p class='mb-4'>Memoization là kỹ thuật lưu trữ kết quả của các lời gọi hàm đệ quy để tránh tính toán lại.</p><h3 class='text-lg font-semibold mb-2'>Ưu điểm:</h3><ul class='list-disc ml-6 mb-4'><li>Tiết kiệm thời gian xử lý cho bài toán có lời gọi lặp lại.</li><li>Tối ưu hóa thuật toán quy hoạch động.</li></ul><pre style='color:#000;background:#f3f4f6'><code style='color:#000'>memo = {}\ndef fib(n):\n  if n in memo: return memo[n]\n  if n <= 1: return n\n  memo[n] = fib(n-1) + fib(n-2)\n  return memo[n]</code></pre>",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Dynamic_Programming_Fibonacci.png/500px-Dynamic_Programming_Fibonacci.png",
+      "video": "https://www.youtube.com/watch?v=HnDJpQ3PqWg"
+    }
+  ]

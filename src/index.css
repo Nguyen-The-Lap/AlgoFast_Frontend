@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  @apply bg-gray-50 dark:bg-gray-900;
+  overflow-x: hidden !important;
+}
+
+.loader {
+  border-radius: 50%;
+  border-top: 4px solid #3b82f6;
+  border-bottom: 4px solid #3b82f6;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  width: 3rem;
+  height: 3rem;
+  display: inline-block;
+}
