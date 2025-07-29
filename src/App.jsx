@@ -25,7 +25,7 @@ export default function App() {
 
   // Kiểm tra đăng nhập khi load app
   useEffect(() => {
-    fetch('/api/auth/me', { credentials: 'include' })
+    fetch('https://algofast-backend.onrender.com/api/auth/me', { credentials: 'include' })
       .then(res => res.ok ? res.json() : null)
       .then(user => {
         if (user) {
