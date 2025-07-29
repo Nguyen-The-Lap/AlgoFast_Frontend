@@ -16,6 +16,8 @@ const DEFAULT_CODE = {
   cpp: "#include <iostream>\nusing namespace std;\n\nint main() {\n    // Viết code tại đây\n    return 0;\n}",
 };
 
+const API_BASE = "https://algofast-backend.onrender.com";
+
 const ExerciseDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -32,7 +34,7 @@ const ExerciseDetail = () => {
   }, [language]);
 
   useEffect(() => {
-    fetch('/api/auth/me', { credentials: 'include' })
+    fetch(`${API_BASE}/api/auth/me`, { credentials: 'include' })
       .then(res => res.ok ? res.json() : null)
       .then(user => {
         if (user) setUser(user);
@@ -44,7 +46,7 @@ const ExerciseDetail = () => {
     const fetchExercise = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`/api/exercise/${id}`);
+        const res = await fetch(`${API_BASE}/api/exercise/${id}`);
         if (!res.ok) throw new Error('Không tìm thấy bài tập');
         const data = await res.json();
         setExercise(data);
@@ -57,7 +59,7 @@ const ExerciseDetail = () => {
   }, [id]);
 
   useEffect(() => {
-    fetch(`https://algofast-backend.onrender.com/api/exercise/${id}/comments`)
+    fetch(`${API_BASE}/api/exercise/${id}/comments`)
       .then(res => res.json())
       .then(data => setComments(data))
       .catch(() => setComments([]));
@@ -67,7 +69,7 @@ const ExerciseDetail = () => {
     e.preventDefault();
     if (!commentText.trim()) return;
     setCommentLoading(true);
-    const res = await fetch(`/api/exercise/${id}/comments`, {
+    const res = await fetch(`${API_BASE}/api/exercise/${id}/comments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

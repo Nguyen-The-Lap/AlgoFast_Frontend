@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../context/UserContext";
 
+const API_BASE = "https://algofast-backend.onrender.com";
+
 export default function AdminPanel() {
   const { user } = useContext(UserContext);
   const [stats, setStats] = useState({ total: "-", admin: "-", student: "-" });
@@ -10,7 +12,7 @@ export default function AdminPanel() {
 
   useEffect(() => {
     // Lấy thống kê tổng quan
-    fetch("https://algofast-backend.onrender.com/api/admin/user-stats", { credentials: "include" })
+    fetch(`${API_BASE}/api/admin/user-stats`, { credentials: "include" })
       .then(res => {
         if (res.status === 403) {
           setForbidden(true);
@@ -24,7 +26,7 @@ export default function AdminPanel() {
       .catch(() => setStats({ total: "-", admin: "-", student: "-" }));
 
     // Lấy danh sách user
-    fetch("https://algofast-backend.onrender.com/api/admin/users", { credentials: "include" })
+    fetch(`${API_BASE}/api/admin/users`, { credentials: "include" })
       .then(res => {
         if (res.status === 403) {
           setForbidden(true);
@@ -49,7 +51,7 @@ export default function AdminPanel() {
 
   const handleDelete = async (id) => {
     if (!window.confirm("Bạn có chắc muốn xóa user này?")) return;
-    const res = await fetch(`/api/users/${id}`, { method: "DELETE", credentials: "include" });
+    const res = await fetch(`${API_BASE}/api/users/${id}`, { method: "DELETE", credentials: "include" });
     if (res.ok) {
       // Xóa thành công, cập nhật lại danh sách user
       setUsers(users.filter(u => u._id !== id));
@@ -61,7 +63,7 @@ export default function AdminPanel() {
   const handleChangeRole = async (id, currentRole) => {
     const newRole = currentRole === "admin" ? "student" : "admin";
     if (!window.confirm(`Bạn có chắc muốn đổi role thành ${newRole}?`)) return;
-    const res = await fetch(`/api/admin/users/${id}/role`, {
+    const res = await fetch(`${API_BASE}/api/admin/users/${id}/role`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -157,4 +159,4 @@ export default function AdminPanel() {
       </div>
     </div>
   );
-} 
+}

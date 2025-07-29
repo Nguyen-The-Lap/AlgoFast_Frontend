@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useContext, useRef } from "react";
 import { UserContext } from "../context/UserContext";
 
+const API_BASE = "https://algofast-backend.onrender.com";
+
 export default function Chat() {
   const { user } = useContext(UserContext);
   const [messages, setMessages] = useState([]);
@@ -9,7 +11,7 @@ export default function Chat() {
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    fetch("https://algofast-backend.onrender.com/api/chat", { credentials: "include" })
+    fetch(`${API_BASE}/api/chat`, { credentials: "include" })
       .then(res => res.json())
       .then(data => setMessages(data));
   }, []);
@@ -22,7 +24,7 @@ export default function Chat() {
     e.preventDefault();
     if (!text.trim()) return;
     setLoading(true);
-    const res = await fetch("https://algofast-backend.onrender.com/api/chat", {
+    const res = await fetch(`${API_BASE}/api/chat`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
